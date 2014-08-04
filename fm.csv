@@ -1,0 +1,51 @@
+1,Generator start battery's labeled with installation date?,Each battery should have a date code for installation date.  Process to verify water levels and charge rate  monthly should be in place,1
+2,Cleanliness of electrical room and equipment ,Check all areas in and around equipment,1
+3,UPS spare parts inventory,Do you know what you have and were it is,1
+4,Arch Flash labels for all switch boards and panels ,Per NEC 110.16,1
+5,All electrical monitoring points functional,If not do you have a plan to fix them,1
+6,UPS battery's maintenance records on site and available,none,1
+7,Is the temperature of all the battery's maintained at 77 degrees,Reading should be taken on the battery case,1
+8,Current site MOPs posted on each switch board,none,1
+9,Safety stations in place and stocked ,Use signage standards for DCEO (see attached),1
+10,Knowledge of electrical project under way at the site,none,1
+11,One line drawings in place in electric rooms,Each major line up should have a drawing,1
+12,Panel schedules up to date,A process should be in place to update them as changes are made,1
+13,ATS crash carts inventoried and secured with a breakaway tag indicating inventories' integrity ,Monthly inventory process should be in place,1
+14,Circuit inventory of available rack position,Record keeping of open circuits,1
+15,LSE ready bags inventoried and secured with a breakaway tag,A process should be in place to update them as changes are made,1
+16,LOTO Process in place and used ,Staff training and awareness,1
+17,CRAC unit maintenance recorded  ,none,2
+18,Air filter replacement schedule understood and recorded,Filter box's should be inspected regularly for filter integrity,2
+19,All sand filters maintained and functional,none,2
+20,Chiller maintenance recorded,none,2
+21,Emergency makeup water system filled and tested,none,2
+22,SOP in place for emergency water fill,none,2
+23,All exhaust POD & Electric room fans operating,none,2
+24,All mechanical monitoring points functional,none,2
+25,Air flow management systems maintained separating hot & cold aisle,Daily walk through should inspect and repair any discrepancy found,2
+26,Perforated tiles maintained in cold aisle ,Check that the louvers our open,2
+27,One line drawings of the mechanical plant in place in mechanical rooms ,none,2
+28,Temporary chillers inspected and ready for use if needed,Daily walk through should inspect,2
+29,Our all main vales tag for identification (number or name),none,2
+30,Aisle temperature sensors in place and at the right height,These should be inspected monthly,2
+31,Fire calking inspected above and below the floors,Integrity must be maintained,3
+32,Fire extinguishers inspection up to date,none,3
+33,All fire extinguishers mounted and with signage in place,Use signage standards for DCEO (see attached),3
+34,Records of fire system maintained and testing ,Records of testing and maintained  on site,3
+35,Call out procedure for fire system in place,none,3
+36,Sprinkler valve room clear of debris,Room should be on the daily walk through,3
+37,If there are fire hydrants on the property have they been tested,The county or water company should test and a record of that test maintained on site,3
+38,Hydro or flow test preformed on sprinkler system,none,3
+39,As Built drawings up to date and organized,Staff should review on a regular basis,4
+40,Process in place to have the As built drawings up dated,Vendors should understand that this is part of there job and it is to be done before they leave the site ,4
+41,Design methodology of the electrical system understood by all staff,Staff should review on a regular basis,4
+42,Design methodology of the mechanical  system understood by all staff,Staff should review on a regular basis,4
+43,Sequence of operation for the BMS available and understood,none,4
+44,Tracking of BMS problems up to date ,Monitoring of these problems is crucial to the building operation,4
+45,Site MOP library in place; soft copy or hard on site,All staff should know how to access it,4
+46,A record of all maintenance that has been done and what is scheduled,maintenance records for each piece of equipment should be maintained,4
+47,Red & Green label's on circuit breakers indicating normal function,All main switch boards should have this indication for quick reference  (red=closed green=open),5
+48,Red & Green label's on valves indicating normal function,All main valves should have a green or red strip at the valve for quick reference (red=closed green=open),5
+49,Building perimeter inspected for security ,Fence line should be checked along with parking area,5
+50,Weekly roof inspection done,Look for a build up of leaves around drains and membrane integrity,5
+51,POD cleanliness above and below the floor,Tacky matts at each POD entrance,5

@@ -1,0 +1,404 @@
+body{
+    font-family: verdana,arial,helvetica,sans-serif;
+}
+
+p.errmsg {
+font-style:italic;
+color:#ff0000;
+}
+header {
+  height: 50px;
+  position:relative;
+  z-index:1;
+}
+header h3 {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #6b8381;
+  margin-top:0;
+  padding-top: 1%;
+}
+.container {
+    width: 100%;
+    height:100% ;
+    /*margin: 10px auto -150px; /* the bottom margin is the negative value of the footer's height */
+    /*margin:10px auto;*/
+    background:#ffffff;
+    position:relative;
+    overflow:auto;
+    padding: 10px 0 10px 0;
+}
+/*.content {*/
+    /*margin: 0 auto;*/
+    /*width: inherit;*/
+    /*height: inherit;*/
+    /*background:white;*/
+    /*position:absolute;*/
+    /*top:0;*/
+    /*bottom:5em;*/
+    /*overflow:auto;*/
+/*}*/
+.contentinner {
+    /*border: 2px solid #c6c3c3;*/
+    height: inherit;
+    overflow:auto;
+    /*padding-left:1%;*/
+    /*padding-left: 10%;*/
+    /*padding-right: 10%;*/
+}
+.contentinnerbox {
+    /*border: 2px solid #c6c3c3;*/
+    height: inherit;
+    overflow:auto;
+    padding:0 1% 0 1%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 1px solid rgb(153, 153, 153);
+    /*padding-left: 10%;*/
+    /*padding-right: 10%;*/
+}
+#footer {
+    clear: both;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    /*bottom: -150px;*/
+    overflow: auto;
+    /*background-color: rgb(131, 131, 131);*/
+    /*background-image: -moz-linear-gradient(center top , rgb(219, 219, 219) 1px, rgb(131, 131, 131) 1px, rgb(131, 131, 131) 2px, rgb(184, 184, 184) 2px, rgb(219, 219, 219) 35px);*/
+    background: #F5F5F5;
+    background: linear-gradient( #c6c3c3, #F5F5F5);
+    max-height:300px;
+    min-height: 150px;
+    width:auto;
+    color: rgb(89, 97, 107);
+}
+.rounded-img {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    border: 1px solid #999999;
+}
+.business_card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgb(153, 153, 153);
+    margin: 0px;
+    width: 300px;
+    background-color: rgb(245, 245, 245);
+    float: right !important;
+    padding: 12px;
+}
+ul.menu {
+    margin-top: -20px;
+    padding-left: 35%;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+p.label {
+ font-size: 1.0em;
+ font-weight: bold;
+ /*font-weight: 100;*/
+  text-align: left;
+}
+div.msg {
+    width: auto;
+    padding:10px;
+    /*border:1px solid gray;*/
+    margin:0px;
+    font-size: 1.2em;
+    color: #ff0000;
+}
+p.errmsg {
+  font-size: 16px;
+  color:#ff0000;
+}
+p.sname{
+ font-size: 1.2em;
+}
+p.header{
+ font-size: 1.2em;
+}
+.submit {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+/*div -Table css */
+.divTable
+{
+        padding-left: 10%
+}
+.divleft
+{
+        float: left;
+        width: 50%;
+        font-weight: bold;
+}
+.divRow
+{
+        /*float: left;*/
+        width: 50%;
+        font-weight: bold;
+}
+.divright
+{
+        float: right;
+        width: 50%;
+        font-weight: bold;
+}
+.divCol
+{
+        float: left;
+        width: 30%;
+        font-weight: bold;
+}
+.divfullRow
+{
+    float: left;
+    width: 100%;
+    font-weight: bold;
+}
+.divError
+{
+    font-style:italic;
+    color:#ff0000;
+}
+.divColumnHeader
+{
+         float: left;
+         display:table-column;
+         width:29%;
+         font-size: 0.8em;
+         text-align: center;
+         background: #eeeeee;
+         padding: .3em;
+         border-top: #ffffff solid;
+         border-bottom: #ffffff solid;
+         letter-spacing: -1px;
+}
+.divColumn
+{
+         float: left;
+         display:table-column;
+         width:29%;
+         font-size: 0.8em;
+         text-align: center;
+         background: #eeeeee;
+         padding: .3em;
+         letter-spacing: -1px;
+}
+.divColumn.a
+{
+    white-space: pre-wrap;
+}
+.divColumnPaginator
+{
+         float: left;
+         display:table-column;
+         width:98%;
+         font-size: 0.8em;
+         text-align: center;
+         background: #eeeeee;
+         padding: .3em;
+         border-top: #ffffff solid;
+         border-bottom: #ffffff solid;
+         letter-spacing: -1px;
+}
+.formBottom {
+    float: right;
+    line-height: 50px;
+}
+
+/* Message flashing */
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}
+/*table sorter */
+table.tablesorter {
+	/*font-family:arial;*/
+	/*background-color: #CDCDCD;*/
+    /*background-color: rgb(245, 245, 245);*/
+    /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
+    /*border-radius: 5px;*/
+    /*border: 1px solid rgb(153, 153, 153);*/
+	margin:10px 0pt 15px;
+	font-size: 1em;
+	width: 100%;
+	text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #c6c3c3;
+	/*background-color: #e6EEEE;*/
+    /*background-color: rgb(219, 235, 244);*/
+	border: 1px solid #FFF;
+	font-size: 1em;
+    font-weight: bold;
+	padding: 4px;
+    text-align: center;
+}
+table.tablesorter thead tr .header {
+	background-image: url(../images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	/*background-color: #FFF;*/
+	vertical-align: top;
+    text-align: center;
+}
+table.tablesorter tbody tr.odd td {
+	/*background-color:#F0F0F6;*/
+    background-color: rgb(219, 235, 244);
+}
+table.tablesorter tbody tr:nth-child(even){
+   background-color: #FFF;
+}
+table.tablesorter tbody tr:nth-child(odd){
+   background-color: rgb(219, 235, 244);
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../images/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+/*background-color: #8dbdd8;*/
+}
+/*left nav accordion.css for base.html*/
+/*custom font for text*/
+/*@import url(http://fonts.googleapis.com/css?family=Nunito);*/
+/*CSS file for fontawesome - an iconfont we will be using. This CSS file imported contains the font-face declaration. More info: http://fortawesome.github.io/Font-Awesome/ */
+/*@import url(http://thecodeplayer.com/uploads/fonts/fontawesome/css/font-awesome.min.css);*/
+
+/*Basic reset*/
+* {margin: 0; padding: 0;}
+
+/*body {*/
+	/*background: #4EB889;*/
+	/*font-family: Nunito, arial, verdana;*/
+/*}*/
+#accordian {
+	/*background: #004050;*/
+    background: #DBEBF4;
+	width: auto;
+    float: left;
+	margin: 0 auto 0 auto;
+	color: #312f2f;
+	/*Some cool shadow and glow effect*/
+	/*box-shadow:*/
+		/*0 5px 15px 1px rgba(0, 0, 0, 0.6),*/
+		/*0 0 200px 1px rgba(255, 255, 255, 0.5);*/
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/*heading styles*/
+#accordian h3 {
+	font-size: 12px;
+    font-weight: 900;
+	line-height: 34px;
+	padding: 0 10px;
+	/*cursor: pointer;*/
+	/*fallback for browsers not supporting gradients*/
+	/*background: #003040;*/
+    background: #F5F5F5;
+	/*background: linear-gradient(#003040, #002535);*/
+    background: linear-gradient(#F5F5F5, #c6c3c3);
+}
+/*heading hover effect*/
+#accordian h3:hover {
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+/*iconfont styles*/
+#accordian h3 span {
+	font-size: 16px;
+	margin-right: 10px;
+}
+/*list items*/
+#accordian li {
+	list-style-type: none;
+}
+/*links*/
+#accordian ul ul li a {
+	color: #312f2f;
+	text-decoration: none;
+	font-size: 12px;
+    font-weight: bold;
+	/*line-height: 27px;*/
+    line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	/*transition for smooth hover animation*/
+	transition: all 0.15s;
+}
+#accordian ul ul li.selected {
+	/*background: #003545;*/
+    background: #c6c3c3;
+    /*background: none repeat scroll 0px 0px rgb(219, 235, 244) !important;*/
+	border-left: 5px solid #F5F5F5;
+    color: white;
+}
+/*after click effect on links*/
+#accordian ul ul li a.selected {
+	/*background: #003545;*/
+    background: #c6c3c3;
+    /*background: none repeat scroll 0px 0px rgb(219, 235, 244) !important;*/
+	border-left: 5px solid #F5F5F5;
+    color: white;
+}
+
+#accordian ul ul li a.active{
+	/*background: #003545;*/
+    background: #c6c3c3;
+    /*background: none repeat scroll 0px 0px rgb(219, 235, 244) !important;*/
+	border-left: 5px solid #F5F5F5;
+    color: white;
+}
+/*hover effect on links*/
+#accordian ul ul li a:hover {
+	/*background: #003545;*/
+    background: #c6c3c3;
+	border-left: 5px solid #F5F5F5;
+    color: white;
+}
+/*Lets hide the non active LIs by default*/
+/*#accordian ul ul {*/
+	/*display: none;*/
+/*}*/
+#accordian li.active ul {
+	display: block;
+}
+
+/* multi form -radio button horizontal render */
+input[type="radio"] {
+    display:inline-block;
+}
+
+label {
+    display:inline-block;
+}
+#radio{
+   width: 50px;
+   float: left;
+}

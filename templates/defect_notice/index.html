@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block external %}
+{% load static %}
+{% endblock %}
+
+{% block content %}
+    <div class="contentinner">
+        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true"><a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Executive Summary</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false"><a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Vision</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false"><a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Mission</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-4" aria-labelledby="ui-id-4" aria-selected="false"><a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">Goals</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-5" aria-labelledby="ui-id-5" aria-selected="false"><a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">Key Success Factors</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-6" aria-labelledby="ui-id-6" aria-selected="false"><a href="#tabs-6" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6">Primary Customers</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-7" aria-labelledby="ui-id-7" aria-selected="false"><a href="#tabs-7" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7">Products and Services</a></li>
+            </ul>
+            <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+                <p>The Data Center Quality and Site Reliability (DCQ&SR) team is a new team (Q4 2013) that is tasked with inspecting and determining if new data center builds are “OPS capable” along with the risk profiling, site auditing, data center health and data center improvement projects of existing operational data centers in the Americas. In addition to determining if a new data center is “OPS capable”, the team will recommend mitigating actions to ensure capacity demands are 100% achieved for AWS. For existing operating data centers, the team will use risk profiling and data center audits to identify defects and will use a data center health portal to systematically trend the metrics to identify improvement initiatives.The Data Center Quality and Site Reliability (DCQ&SR) team is a new team (Q4 2013) that is tasked with inspecting and determining if new data center builds are “OPS capable” along with the risk profiling, site auditing, data center health and data center improvement projects of existing operational data centers in the Americas. In addition to determining if a new data center is “OPS capable”, the team will recommend mitigating actions to ensure capacity demands are 100% achieved for AWS. For existing operating data centers, the team will use risk profiling and data center audits to identify defects and will use a data center health portal to systematically trend the metrics to identify improvement initiatives.</p>
+                <p>Specifically, the DCQ&SR team focuses on the ongoing improvement of a quality program across the platform explicit to power systems, mechanical cooling systems, controls, security, data center operations and staffing. The quality program will have defined feedback loops into Engineering Design, Construction, Commissioning, Operations and Training.</p>
+                <p>In the joint effort to bring AWS availability to the next level, the DCQ&SR team will work within Amazonian model approach for all work and reporting. The team’s pragmatic approach will ensure the quality bar remains high by certifying the delivery of high quality work, while still demanding it of others’ as well. In addition, DCQ&SR wants to raise the quality bar by encouraging that our teams deliver high quality products, services and solutions in supporting our company goals. Furthermore, DCQ&SR wants to teach and coach employees about setting their own standards of meeting the customer expectations. Finally, DCQ&SR will work in supporting the best interest of the company and our customers given the various constraints that are present for any given situation.</p>
+                <p>The team will personify the leadership principle: <i>Insist on the Highest Standards</i> - Leaders ensure that defects do not get sent down the line and that problems are fixed so they stay fixed.</p>
+            </div>
+            <div id="tabs-2" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <p>In a joint effort with Engineering Design, Construction, Commissioning, Operations and Training teams, we would deliver new data centers on time, on budget and without defects; in addition, all defects in operational data centers would be systematically identified and removed from the system based on the risk profiling of the defect to ensure zero ops controllable outages in the Americas.</p>
+            </div>
+            <div id="tabs-3" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <p>Strive for prevention of failure, defect reduction and increased customer satisfaction</p>
+                <ul>
+                    <li style="list-style-type: disc;">Research and develop new methods and standards to drive site reliability</li>
+                    <li style="list-style-type: disc;">Proactively communicate and share knowledge</li>
+                    <li style="list-style-type: disc;">Apply the knowledge to enhance our products, processes and services</li>
+                    <li style="list-style-type: disc;">Continually monitor and improve our performance against set targets</li>
+                </ul>
+            </div>
+            <div id="tabs-4" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <p>GOALS - 2014 GOALS AND OBJECTIVES</p>
+                <ul><li style="list-style-type: disc;">Building of the Quality Team</li>
+                    <li style="list-style-type: disc;">Data Center Acceptance Program</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">Owner Project Requirementso	Owner Project Requirements</li>
+                        <li style="list-style-type:circle;">Infra Sauron Report</li>
+                    </ul>
+                    <li style="list-style-type: disc;">Staff Recommendations</li>
+                    <li style="list-style-type: disc;">Data Center Health Dashboard</li>
+                    <li style="list-style-type: disc;">Site Reliability Audit Program</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">Monthly Inspection Program</li>
+                    </ul>
+                    <li style="list-style-type: disc;">DCQ&SR Workflow Process</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">Change Management Communication</li>
+                        <li style="list-style-type:circle;">Field Defect Notification</li>
+                        <li style="list-style-type:circle;">Weekly Project Tracker</li>
+                    </ul>
+                    <li style="list-style-type: disc;">Expand the quality program throughout the Americas </li>
+                </ul>
+            </div>
+            <div id="tabs-5" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <ul>
+                    <li style="list-style-type: disc;">Reduction of AWS outages - zero ops controllable outages in the Americas</li>
+                    <li style="list-style-type: disc;">Defining the Key Performance Indicators (KPIs) to provide transparency into control mechanisms to ensure zero ops controllable outages</li>
+                    <li style="list-style-type: disc;">Real time quantitative measuring of DC Health at the individual data center level along with cluster-wide health based on KPIs</li>
+                    <li style="list-style-type: disc;">Creation of new policies, procedures and practices to the OPS teams to Increase operational readiness or process engineering of existing procedures and practices to proactively mitigate operational risk</li>
+                    <li style="list-style-type: disc;">Field defect notification tool to effectively notify the team of any discovered infrastructure issues along with systematic tracking and trending analysis
+</li>
+                    <li style="list-style-type: disc;">Project completion of improvement projects versus target without incident</li>
+                    <li style="list-style-type: disc;">Identification of training gaps</li>
+                </ul>
+            </div>
+            <div id="tabs-6" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <ul>
+                    <li style="list-style-type: disc;">AWS</li>
+                    <li style="list-style-type: disc;">Service Providers</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">Engineering Design</li>
+                        <li style="list-style-type:circle;">Construction</li>
+                        <li style="list-style-type:circle;">Commissioning</li>
+                        <li style="list-style-type:circle;">Training</li>
+                    </ul>
+                </ul>
+            </div>
+            <div id="tabs-7" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                <ul>
+                    <li style="list-style-type: disc;">Products:</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">AWS acceptance checklist for new construction projects with mitigation actions along with production of a site binder that will include all documentation, site operability items, training and miscellaneous turnover items</li>
+                        <li style="list-style-type:circle;">Formal DC walkthroughs and audit templates and reports along with submission of corrective actions based on DCQ&SR audits</li>
+                        <li style="list-style-type:circle;">DCI weekly project tracker and communication </li>
+                    </ul>
+                    <li style="list-style-type: disc;">Services:</li>
+                    <ul style="padding-left: 10px;">
+                        <li style="list-style-type:circle;">Real time quantitative measuring of DC Health at the individual data center level along with cluster-wide health based on established KPIs </li>
+                        <li style="list-style-type:circle;">Incident reporting and communication (Amazon Field Defect Notice)</li>
+                        <li style="list-style-type:circle;">Risk profiling for all data centers in the Americas</li>
+                        <li style="list-style-type:circle;">Best practice guidance for the creation of new policies, procedures, and practices to the OPS teams to increase operational readiness or process engineering of existing procedures and practices to proactively mitigate operational risk</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+{#    <a href="/defect_notice/add_defectnotice/">Defect_Notice Form</a><br />#}
+{#    <a href="/defect_notice/about">About</a><br />#}
+{#    <img src="{% static "images/main_logo.jpeg" %}" alt="" />#}
+{#    <img src="media/main_logo.jpeg" alt="" />#}
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#{% load static %}#}
+{#<html>#}
+{#<head>#}
+{#    <title>Defect Notice</title>#}
+{#    <link rel="stylesheet" href="{% static "css/base.css" %}" /> <!-- CSS -->#}
+{#    <script src="{% static "js/jquery.js" %}"></script> <!-- JavaScript -->#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Notice Defect</h1>#}
+{#</body>#}
+{#</html>#}

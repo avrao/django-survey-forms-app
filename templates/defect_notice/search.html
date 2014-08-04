@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block external %}
+
+{%  endblock %}
+
+{% load static %}
+
+{% block title %}Form{% endblock %}
+{% block head  %}Form{% endblock %}
+{% block content %}
+
+    <div class="contentinnerbox">
+
+    <h4>Search Field Defect Notice</h4>
+        {% if successmsg %}
+        <div class="msg">{{ successmsg }}</div>
+        {% else %} 
+              
+        <form id="SearchDefectForm_form" name="SearchForm"method="post"  action="search">{% csrf_token %}
+            <div class="divTable">
+                    <span class="divError">{{ msg }}</span>
+                    <div class="divfullRow" id="{{ form.auto_id }}_errors">{{ form.id.label }}{{ form.id}}</div>
+                    <div><input class="submit" type = "submit" value = "Search"/></div>
+            </div>
+        </form>
+
+        <div id="search-results">
+        {% if show_result %}
+            
+            {% include "defect_notice/approve.html" %}
+        {% endif %}
+        </div>
+        <div>
+            <p>Contact Information:<br>  If you have any questions, please contact <a href="mailto:msantori@amazon.com?Subject=FieldDefectNotice">Matthew Santori</a> or <a href="mailto:msstark@amazon.com?Subject=FieldDefectNotice">Michael Stark</a>.<br />
+            <span class="formBottom">Amazon.com - Confidential - Do not Distribute<img src="{% static 'images/DCQSR_logoWT.jpg' %}" alt="" /></span></p>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

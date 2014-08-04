@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block external %}
+
+{%  endblock %}
+
+{% block title %}Form{% endblock %}
+{% block head  %}Form{% endblock %}
+{% block content %}
+<div class="contentinnerbox">
+<h4>FM Site Assessment</h4>{{ errormessage }}
+{% if msg %}
+<div class="msg">{{ msg }}</div>
+{% else %}
+<div>The Site Reliability Audit Report accompanies an onsite interview, a worksheet and a walkthrough evaluation that have  been completed by the Data Center Quality and Site Reliability team with a Facility
+ Manager (FM) in attendance. This report highlights the areas for potential gains in operational efficiency, maintenance, safety and organization. For each observed area there are comments referencing inconsistencies and recommended actions for follow up. These recommended actions are recommendations only and are not considered a final solution. It is up to the appropriate teams/individuals to apply the best remediation plan suited for each scenario following Amazon.com Core values Competencies and Leadership Principles.
+</div><br />
+
+
+ {% endif %}
+
+</div>
+{% endblock %}

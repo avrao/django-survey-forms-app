@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% block external %}{%  endblock %}
+{% block title %}Form{% endblock %}
+{% block head  %}{{ wizard.form.media }}{% endblock %}
+{% load i18n %}
+{% block content %}
+<div class="contentinnerbox">
+
+<h4>{{ wizard.form.title }}</h4>{{ errormessage }}
+{% if msg %}
+<div class="msg">{{ msg }}</div>
+{% else %}
+    <div>The Site Reliability Audit Report accompanies an onsite interview, a worksheet and a walkthrough evaluation that have  been completed by the Data Center Quality and Site Reliability team with a Facility
+     Manager (FM) in attendance. This report highlights the areas for potential gains in operational efficiency, maintenance, safety and organization. For each observed area there are comments referencing inconsistencies and recommended actions for follow up. These recommended actions are recommendations only and are not considered a final solution. It is up to the appropriate teams/individuals to apply the best remediation plan suited for each scenario following Amazon.com Core values Competencies and Leadership Principles.
+    </div><hr style="margin: 5px 0px 10px;">
+    <div style="font-weight: bold;text-decoration-line:underline">Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</div>
+    {% for field in form %}
+        {{ field.error }}
+    {% endfor %}
+
+    <form action="../monthly/" class="assessForm" method="post" name="assessment">{% csrf_token %}
+        {{ wizard.management_form }}
+        {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+                {{ form }}
+                <!-- block below accesses a customized form layout for each step -->
+<!--{#                    {% block form_if %}{% endblock %}#}-->
+            {% endfor %}
+        {% else %}
+            <div class="divCol">{{ wizard.form.username.label }}<br />{{ wizard.form.username}}
+            <span class="divError">{{ wizard.form.username.errors }}</span>
+            </div>
+            <div class="divCol">{{ wizard.form.siteCode.label}}<br />{{ wizard.form.siteCode }}
+            <span class="divError">{{form.siteCode.errors }}</span>
+            </div>
+
+            <div class="divCol" id="datepicker">{{ wizard.form.assessmentDate.label }}<br />{{ wizard.form.assessmentDate}}
+            <span class="divError">{{wizard.form.assessmentDate.errors }}</span>
+            </div>
+            <hr style="margin: 5px 0px 10px;">
+            <div class="divfullRow">{{ wizard.form.catname}}</div>
+
+                {% for q in wizard.form.questions%}
+                    <div class="divfullRow" style="font-size:12px;" >{{ q.question_id  }}&nbsp;&nbsp;{{ q.questionText }}</div>
+                    <div class="divfullRow" style="color: #000080;font-size:10px; font-style: italic;">
+                        {% if q.guidelineText != '' %}
+                        [{{ q.guidelineText }}]
+                        {% endif %}
+                    </div>
+                    <div class="divfullRow" >
+
+                        {% if q.question_id == 1 %}
+                            {{ wizard.form.score_1 }}<span class="divError">{{ wizard.form.score_1.errors }}</span>
+                        {% elif q.question_id == 2 %}
+                            {{ wizard.form.score_2 }}<span class="divError">{{ wizard.form.score_2.errors }}</span>
+                        {% elif q.question_id == 3 %}
+                            {{ wizard.form.score_3 }}<span class="divError">{{ wizard.form.score_3.errors }}</span>
+                        {% elif q.question_id == 4 %}
+                            {{ wizard.form.score_4 }}<span class="divError">{{ wizard.form.score_4.errors }}</span>
+                        {% elif q.question_id == 5 %}
+                            {{ wizard.form.score_5 }}<span class="divError">{{ wizard.form.score_5.errors }}</span>
+                        {% elif q.question_id == 6 %}
+                            {{ wizard.form.score_6 }}<span class="divError">{{ wizard.form.score_6.errors }}</span>
+                        {% elif q.question_id == 7 %}
+                            {{ wizard.form.score_7 }}<span class="divError">{{ wizard.form.score_7.errors }}</span>
+                        {% elif q.question_id == 8 %}
+                            {{ wizard.form.score_8 }}<span class="divError">{{ wizard.form.score_8.errors }}</span>
+                        {% elif q.question_id == 9 %}
+                            {{ wizard.form.score_9 }}<span class="divError">{{ wizard.form.score_9.errors }}</span>
+                        {% elif q.question_id == 10 %}
+                            {{ wizard.form.score_10 }}<span class="divError">{{ wizard.form.score_10.errors }}</span>
+                        {% elif q.question_id == 11 %}
+                            {{ wizard.form.score_11 }}<span class="divError">{{ wizard.form.score_11.errors }}</span>
+                        {% elif q.question_id == 12 %}
+                            {{ wizard.form.score_12 }}<span class="divError">{{ wizard.form.score_12.errors }}</span>
+                        {% elif q.question_id == 13 %}
+                            {{ wizard.form.score_13 }}<span class="divError">{{ wizard.form.score_13.errors }}</span>
+                        {% elif q.question_id == 14 %}
+                            {{ wizard.form.score_14 }}<span class="divError">{{ wizard.form.score_14.errors }}</span>
+                        {% elif q.question_id == 15 %}
+                            {{ wizard.form.score_15 }}<span class="divError">{{ wizard.form.score_15.errors }}</span>
+                        {% elif q.question_id == 16 %}
+                            {{ wizard.form.score_16 }}<span class="divError">{{ wizard.form.score_16.errors }}</span>
+
+                        {% elif q.question_id == 17 %}
+                            {{ wizard.form.score_17 }}<span class="divError">{{ wizard.form.score_17.errors }}</span>
+                        {% elif q.question_id == 18 %}
+                            {{ wizard.form.score_18 }}<span class="divError">{{ wizard.form.score_18.errors }}</span>
+                        {% elif q.question_id == 19 %}
+                            {{ wizard.form.score_19 }}<span class="divError">{{ wizard.form.score_19.errors }}</span>
+                        {% elif q.question_id == 20 %}
+                            {{ wizard.form.score_20 }}<span class="divError">{{ wizard.form.score_20.errors }}</span>
+                        {% elif q.question_id == 21 %}
+                            {{ wizard.form.score_21 }}<span class="divError">{{ wizard.form.score_21.errors }}</span>
+                        {% elif q.question_id == 22 %}
+                            {{ wizard.form.score_22 }}<span class="divError">{{ wizard.form.score_22.errors }}</span>
+                        {% elif q.question_id == 23 %}
+                            {{ wizard.form.score_23 }}<span class="divError">{{ wizard.form.score_23.errors }}</span>
+                        {% elif q.question_id == 24 %}
+                            {{ wizard.form.score_24 }}<span class="divError">{{ wizard.form.score_24.errors }}</span>
+                        {% elif q.question_id == 25 %}
+                            {{ wizard.form.score_25 }}<span class="divError">{{ wizard.form.score_25errors }}</span>
+                        {% elif q.question_id == 26 %}
+                            {{ wizard.form.score_26 }}<span class="divError">{{ wizard.form.score_26.errors }}</span>
+                        {% elif q.question_id == 27 %}
+                            {{ wizard.form.score_27 }}<span class="divError">{{ wizard.form.score_27.errors }}</span>
+                        {% elif q.question_id == 28 %}
+                            {{ wizard.form.score_28 }}<span class="divError">{{ wizard.form.score_28.errors }}</span>
+                        {% elif q.question_id == 29 %}
+                            {{ wizard.form.score_29 }}<span class="divError">{{ wizard.form.score_29.errors }}</span>
+                        {% elif q.question_id == 30 %}
+                            {{ wizard.form.score_30 }}<span class="divError">{{ wizard.form.score_30.errors }}</span>
+
+                        {% elif q.question_id == 31 %}
+                            {{ wizard.form.score_31 }}<span class="divError">{{ wizard.form.score_31.errors }}</span>
+                        {% elif q.question_id == 32 %}
+                            {{ wizard.form.score_32 }}<span class="divError">{{ wizard.form.score_32.errors }}</span>
+                        {% elif q.question_id == 33 %}
+                            {{ wizard.form.score_33 }}<span class="divError">{{ wizard.form.score_33.errors }}</span>
+                        {% elif q.question_id == 34 %}
+                            {{ wizard.form.score_34 }}<span class="divError">{{ wizard.form.score_34.errors }}</span>
+                        {% elif q.question_id == 35 %}
+                            {{ wizard.form.score_35 }}<span class="divError">{{ wizard.form.score_35.errors }}</span>
+                        {% elif q.question_id == 36 %}
+                            {{ wizard.form.score_36 }}<span class="divError">{{ wizard.form.score_36.errors }}</span>
+                        {% elif q.question_id == 37 %}
+                            {{ wizard.form.score_37 }}<span class="divError">{{ wizard.form.score_37.errors }}</span>
+                        {% elif q.question_id == 38 %}
+                            {{ wizard.form.score_38 }}<span class="divError">{{ wizard.form.score_38.errors }}</span>
+
+                        {% elif q.question_id == 39 %}
+                            {{ wizard.form.score_39 }}<span class="divError">{{ wizard.form.score_39.errors }}</span>
+                        {% elif q.question_id == 40 %}
+                            {{ wizard.form.score_40 }}<span class="divError">{{ wizard.form.score_40.errors }}</span>
+                        {% elif q.question_id == 41 %}
+                            {{ wizard.form.score_41 }}<span class="divError">{{ wizard.form.score_41.errors }}</span>
+                        {% elif q.question_id == 42 %}
+                            {{ wizard.form.score_42 }}<span class="divError">{{ wizard.form.score_42.errors }}</span>
+                        {% elif q.question_id == 43 %}
+                            {{ wizard.form.score_43 }}<span class="divError">{{ wizard.form.score_43.errors }}</span>
+                        {% elif q.question_id == 44 %}
+                            {{ wizard.form.score_44 }}<span class="divError">{{ wizard.form.score_44.errors }}</span>
+                        {% elif q.question_id == 45 %}
+                            {{ wizard.form.score_45 }}<span class="divError">{{ wizard.form.score_45.errors }}</span>
+                        {% elif q.question_id == 46 %}
+                            {{ wizard.form.score_46 }}<span class="divError">{{ wizard.form.score_46.errors }}</span>
+
+                        {% elif q.question_id == 47 %}
+                            {{ wizard.form.score_47 }}<span class="divError">{{ wizard.form.score_47errors }}</span>
+                        {% elif q.question_id == 48 %}
+                            {{ wizard.form.score_48 }}<span class="divError">{{ wizard.form.score_48.errors }}</span>
+                        {% elif q.question_id == 49 %}
+                            {{ wizard.form.score_49 }}<span class="divError">{{ wizard.form.score_49.errors }}</span>
+                        {% elif q.question_id == 50 %}
+                            {{ wizard.form.score_50 }}<span class="divError">{{ wizard.form.score_50.errors }}</span>
+                        {% elif q.question_id == 51 %}
+                            {{ wizard.form.score_51 }}<span class="divError">{{ wizard.form.score_51.errors }}</span>
+                        {% endif %}
+                    </div>
+                <hr style="margin: 5px 0px 5px;">
+                {% endfor %}
+
+                <!--{# Include the hidden fields #}-->
+            {% for hidden in wizard.form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+<!--{#                <div class="divCol" style="color: #000080;font-style: italic;">[{{ form.allquestions.guidelineText }}]</div>#}-->
+<!--{#                <div class="divCol">{{ form.score_ }}</div>#}-->
+
+
+            <!-- block below accesses a customized form layout for each step -->
+            <!-- using the with statement makes it possible to use the same layout used in the form_if block -->
+<!--{#                  {{ wizard.form }}#}-->
+<!--{#                {% with form=wizard.form %}#}-->
+<!--{#                {% block form_else %}{% endblock %}#}-->
+<!--{#                {% endwith %}#}-->
+        {% endif %}
+
+        {% if wizard.steps.prev %}
+        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">first Step</button>
+        <button name="wizard_goto_step" class="prev" type="submit" value="{{ wizard.steps.prev }}">prev step</button>
+<!--{#          <input name="wizard_goto_step" type="submit" value="first step">#}-->
+<!--{#          <input name="wizard_goto_step" type="submit" value="prev step">#}-->
+        {% endif %}
+        <div class="divfullRow">
+<!--{#            <input type="submit" value="Submit" onclick ="return validate(this)" />#}-->
+            {% if wizard.steps.next %}
+                <input type="submit" value="Next" />
+            {% else %}
+                <input type="submit" value="Submit Assessment" />
+            {% endif %}
+         </div>
+    </form>
+{% endif %}
+</div>
+{% endblock %}

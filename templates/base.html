@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block external %}
+{#        <link rel="stylesheet" href="http://thecodeplayer.com/uploads/fonts/fontawesome/css/font-awesome.min.css)">#}
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+    {% endblock %}
+    <title>Defect Notice</title>
+    {% load static from staticfiles %}
+
+    <script type="text/javascript" src="{% static 'js/jquery-latest.min.map.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/jquery-1.10.2.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'js/jquery.tablesorter.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.js' %}"></script>
+    <!-- prefix free to deal with vendor prefixes -->
+    <script type="text/javascript" src="{% static 'js/prefixfree-1.0.7.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/search_defectnotice.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.multiple.select.js' %}" ></script>
+
+    <script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}" ></script>
+
+{#    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">#}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jqueri-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/multiple-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+<!--{#<script type="application/javascript">#}-->
+<!--{#/*jQuery time*/#}-->
+<!--{#$(document).ready(function(){#}-->
+<!--{#	$("#accordian h3").click(function(){#}-->
+<!--{#		//slide up all the link lists#}-->
+<!--{#		$("#accordian ul ul").slideUp();#}-->
+<!--{#		//slide down the link list below the h3 clicked - only if its closed#}-->
+<!--{#		if(!$(this).next().is(":visible"))#}-->
+<!--{#		{#}-->
+<!--{#			$(this).next().slideDown();#}-->
+<!--{#		}#}-->
+<!--{#	})#}-->
+<!--{#})#}-->
+<!--{#</script>#}-->
+<script type="application/javascript">
+/*jQuery - highlight selected left nav menu item*/
+$(document).ready(function(){
+var str=location.href.toLowerCase();
+$("#accordian ul ul li a").each(function() {
+if (str.indexOf(this.href.toLowerCase()) > -1) {
+ $("#accordian ul ul li.selected").removeClass("selected");
+$(this).parent().addClass("selected");
+}
+ });
+ })
+jQuery('input.date').each(function(){
+    jQuery(this).datepicker({dateFormat:'dd/mm/yy', changeMonth: true,    stepMonths: 12, showAnim:"slideDown" });
+    jQuery('#ui-datepicker-div .ui-helper-hidden-accessible').css("position", "absolute !important");
+    jQuery('#ui-datepicker-div').css('clip', 'auto');
+});
+</script>
+
+<script type="text/javascript">
+    /* sort report table*/
+    $(document).ready(function() {
+        $("#myTable").tablesorter();
+        $(".datepicker").datepicker( { maxDate: new Date()} );
+    });
+</script>
+<script type="text/javascript">
+    $(function() {
+        $(".datepicker").datepicker();
+        $(".datepicker").datepicker( { maxDate: new Date()} );
+        $('#id_site_multi').multipleSelect();
+{#        $('#id_site').multipleSelect();#}
+    });
+    $(function() {
+    $( "#tabs" ).tabs();
+    $( "#tabs" ).tabs({
+      event: "mouseover"
+    });
+  });
+
+</script>
+
+  </head>
+  <body>
+
+    <header>
+        <div style="float:left;"><a href="/"><img src="{% static 'images/DCQSR_logoWT.jpg' %}" alt="" /></a>
+            <a href="/"><img src="{% static 'images/dcqsrLogo.jpg' %}" alt="" /></a></div><hr>
+    </header><!-- container>-->
+<div class="container">
+{#    <div class="content">#}
+        <div id="accordian">
+        <ul>
+            <li>
+                <h3><span class="icon-dashboard"></span>Field Defect Notifications</h3>
+                <ul>
+                    <li><a href="/defect_notice/about">About Field Defect</a></li>
+                    <li><a href="/defect_notice/add">Defect Form</a></li>
+                    <li><a href="/defect_notice/report">Defect Report</a></li>
+                </ul>
+            </li>
+            <!-- we will keep this LI open by default -->
+            <li>
+                <h3><span class="icon-tasks"></span>Datacenter Acceptance</h3>
+                <ul>
+                    <li><a href="#">Form 1</a></li>
+                    <li><a href="#">Report 1</a></li>
+                    <li><a href="#">Form 2</a></li>
+                    <li><a href="#">Report 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3><span class="icon-calendar"></span>Site Reliability</h3>
+                <ul>
+                    <li><a href="/assessment/monthly">Monthly Self Assessment Form</a></li>
+                    <li><a href="#">Monthly Self Assessment Report</a></li>
+                    <li><a href="#">Quarterly Self Assessment Form</a></li>
+                    <li><a href="#">Quarterly Self Assessment Report</a></li>
+                    <li><a href="#">AWS Quarterly Assessment Form</a></li>
+                    <li><a href="#">AWS Quarterly Assessment report</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Datacenter Implementations</h3>
+                <ul>
+                    <li><a href="#">Master Schedules</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Quality Metrics</h3>
+                <ul>
+                    <li><a href="#">Datacenter Health</a></li>
+                    <li><a href="#">PUE Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Documents</h3>
+                <ul>
+                    <li><a href="#">All Sites</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+{#    </div>#}
+</div>
+<div id="footer">
+
+        <div class="rounded-img" style="">
+            <a target="_blank" href="https://dco-docs-cf.amazon.com/dashboard.action">
+                <img src="{% static 'images/DCPortalLogo.png' %}" alt="DC Portal" />
+            </a>
+        </div>
+        <div class="business_card">
+            <h3> Need help?</h3>
+            <ul>
+                <li>FAQ </li>
+                <li>Documentation</li>
+                <li>Contact Us: dcq-sr@amazon.com</li>
+            </ul>
+            <div class="browser_support">
+                <a href="https://w.amazon.com/?DTUX/Browser_Support_Policy">Browser Support Policy</a>
+            </div>
+        </div>
+</div>
+  </body>
+
+</html>

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block external %}
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Site code');
+        data.addColumn('number', 'Incident date');
+        data.addRows([
+          ['IAD1', 3],
+          ['IAD6', 1],
+          ['SFO2', 1],
+          ['IAD10', 1],
+          ['IAD11/14', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Data Center Critical defect for April 2014',
+                       'width':700,
+                       'height':600};
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+{% endblock %}
+{% load static %}
+
+{% block content %}
+
+    <div class="contentinnerbox">
+    <h4>Defect Notice Report</h4>
+  {% if rptresult == False %}
+    <div class="msg">{{ rptmsg }}</div>
+  {% else %}
+    <table id="myTable" class="tablesorter">
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Site Code</th>
+        <th>Incident Date</th>
+        <th>Defect Source</th>
+        <th>Critical Load Loss</th>
+        <th>Large Scale Event</th>
+{#        <th>Infrastructure Division</th>#}
+{#        <th>Infrastructure System</th>#}
+{#        <th>Infrastructure Subsystem</th>#}
+        <th>Reference File</th>
+{#        <th>Manufacturer</th>#}
+{#        <th>Model</th>#}
+{#        <th>Synopsis</th>#}
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for each in result_list %}
+        <tr>
+        <td><a href="../defect_notice/render_pdf/{{ each.id }}">{{ each.id }}</a></td>
+        <td>{{ each.site }}</td>
+        <td>{{ each.incidentDate}}</td>
+        <td>{{ each.defectSource_id }}</td>
+        <td>{% if each.critical == 1 %} Yes {% else %} No {% endif %}</td>
+        <td>{% if each.largeScale == 1 %} Yes {% else %} No {% endif %}</td>
+{#        <td>{{ each.infrastructureDivision_id }}</td>#}
+{#        <td>{{ each.infrastructureSystem_id }}</td>#}
+{#        <td>{{ each.infrastructureSubsystem }}</td>#}
+        <td>
+            {% if each.filename == "none"  %}
+                {{each.filename}}
+            {% else %}
+                <a href="../media/FDN/{{each.filename}}">{{ each.filename}}</a>
+            {% endif %}
+        </td>
+{#        <td>{{ each.assetManufacturer }}</td>#}
+{#        <td>{{ each.assetModelNumber }}</td>#}
+{#        <td>{{ each.defectSynopsis }}</td>#}
+        </tr>
+    {% endfor %}
+    </tbody>
+  {% endif %}
+    <tfoot>
+        <tr><th colspan="15">
+                {% if show_paginator %}
+                {% if has_prev %}
+                    <a href="/defect_notice/report?page={{ prev_page }}">&laquo; Previous</a>
+                {% endif %}
+                {% if has_next %}
+                    <a href="/defect_notice/report?page={{ next_page }}">Next &raquo;</a>
+                {% endif %}
+                    (Page {{ page }} of {{ pages }})
+                {% endif %}
+        </th></tr>
+    </tfoot>
+    </table>
+
+    <!--Div that will hold the pie chart-->
+{#   <div id="chart_div"></div>#}
+    </div>
+
+{% endblock %}

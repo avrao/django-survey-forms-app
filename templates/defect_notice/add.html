@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block external %}
+{#    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" media="all" />#}
+{%  endblock %}
+
+{% load static %}
+
+{% block title %}Field Defect Notice Form{% endblock %}
+{% block head  %}Field Defect Notice Form{% endblock %}
+{% block content %}
+{#<script type="text/javascript">#}
+{#    $(document).ready(function() {#}
+{#        $('#js').hover(function() {#}
+{#        alert('Permission denied!');#}
+{#        return false;#}
+{#        });#}
+{#    });#}
+{#</script>#}
+    <div id="{{ js }}" class="contentinnerbox">
+
+    <h4>Field Defect Notice</h4>
+    {% if msg %}
+    <div class="msg">{{ msg }}</div>
+    {% else %}
+   
+        <form id="DefectForm_form" method="post" enctype="multipart/form-data" action="add">{% csrf_token %}
+              <div class="divTable">
+{#                <div class="divRow">{{ form.user_name.label }}<br />{{ form.user_name}}</div>#}
+                <div class="divleft">{{ form.site_multi.label}}<br />{{ form.site_multi}}
+                <span class="divError">{{form.site_multi.errors }}</span>
+                </div>
+                <div class="divleft">{{ form.tt_number.label }}{{ form.tt_number}}</div>
+
+                <div class="divleft">{{ form.indicator_source.label }}{{ form.indicator_source}}</div>
+                <div class="divleft" id="datepicker">{{ form.incident_date.label }}{{ form.incident_date}}</div>
+
+                <div class="divleft" >{{ form.critical_load.label }}{{ form.critical_load}}
+                </div>
+                <div class="divleft">{{ form.large_scale.label }}{{ form.large_scale}}
+                </div>
+
+                <div class="divleft">{{ form.system_asset.label }}{{ form.system_asset}}</div>
+                <div class="divleft">{{ form.division_asset.label }}{{ form.division_asset}}</div>
+
+                <div class="divleft">{{ form.manufacturer_asset.label }} {{ form.manufacturer_asset}}
+                <span class="divError">{{ form.manufacturer_asset.errors }}</span>
+                </div>
+                <div class="divleft">{{ form.subsystem_asset.label }}{{ form.subsystem_asset}}</div>
+
+                <div class="divleft">{{ form.model_number.label }}{{ form.model_number}}
+                <span class="divError">{{ form.model_number.errors }}</span>
+                </div>
+
+                <div class="divleft">{{ form.referenceFile.label }}&nbsp;({{ form.referenceFile.help_text }}){{ form.referenceFile}}</div>
+
+                <div class="divfullRow">{{ form.defect_synopsis.label }}{{ form.defect_synopsis}}</div>
+
+                {{ form.notifier_email.as_hidden}} {{ form.approved.as_hidden}}{{ form.filename.as_hidden}}{{ form.approvalDate.as_hidden }}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+                <div class="divfullRow"><input class="submit" type = "submit" value = "Submit"/></div>
+              </div>
+        </form>
+        <div class="divfullRow">
+            <p>Contact Information:<br>  If you have any questions, please contact <a href="mailto:msantori@amazon.com?Subject=FieldDefectNotice">Matthew Santori</a> or <a href="mailto:msstark@amazon.com?Subject=FieldDefectNotice">Michael Stark</a>.<br />
+            <span class="formBottom">Amazon.com - Confidential - Do not Distribute<img src="{% static 'images/DCQSR_logoWT.jpg' %}" alt="" /></span></p>
+        </div>
+     {% endif %}
+
+    </div>
+{% endblock %}

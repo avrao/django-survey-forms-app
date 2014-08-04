@@ -1,0 +1,29 @@
+{% extends 'base.html' %}#}
+{% block external %}{% load static %}{%  endblock %}
+{% block title %}Field Defect Notice{% endblock %}
+{% block head  %}Field Defect Notice{% endblock %}
+{% block content %}
+    <div class="contentinnerbox">
+    <h4>Field Defect Notice</h4>
+        <p>The Field Defect Notice program (FDN) has been developed to gather data on data center facility infrastructure upsets (incidents) and outages. This database will be used as a library of lessons learned to guide the operations teams and provide notification of equipment defects or installation problems that should be investigated in other IAD sites and company wide.  The data will also be trended for use in providing feedback to design and engineering on the equipment types and design issues in the data centers.</p>
+        <p>The FDN form should be used when a site experiences an incident with its infrastructure equipment when it behaves in an unexpected manner, whether due to an external condition, site development discrepancy, or site operations mistake.  An FDN form should be submitted for any of these unexpected conditions. This form will be used by the DCQ&SR team as a framework for reporting an event and its resolution in a manner that enables validation and technical accuracy to the incident before posting. </p>
+        <p><strong>Source of first indication: </strong></p>
+        <p><strong>Alarm - </strong>Alarm from any infrastructure performance or status monitoring system, including Building Automation Systems (BAS) or proprietary equipment monitoring systems. The Alarm may originate from either active (i.e. UPS, Mechanical plant) or passive (i.e. Fire, Security) systems.</p>
+        <p><strong>Technician - </strong>Incident first identified by direct observation of the site staff, whether during normal scheduled equipment checks, during equipment operation, or incidental to other activities.</p>
+        <p><strong>User – </strong>Incident first reported by a client or User of the site data center facility infrastructure such as an application team, or business line manager.</p>
+        <p><strong>Types of events that would trigger a FDN: </strong></p>
+        <p><strong>Equipment Adjustment - </strong>Equipment is not adjusted within tolerances or specifications. This Root-Cause Type can be used for mechanical equipment requiring belt tightening, valve seat adjustment, etc. or for electrical equipment where a potentiometer requires adjustment or a circuit breaker requires mechanical alignment. This Root-Cause Type is also appropriate where BAS control set points are not correct for the intended operations.</p>
+        <p><strong>Inadequate Maintenance - </strong>Required or specified maintenance is not performed, not finished, or incorrectly accomplished. Generally, equipment that fails while in service is charged here. (Proper maintenance procedures should have identified the problem before it occurred.)</p>
+        <p><strong>Operated to Failure - </strong>Equipment is left in service to the point it can no longer deliver the required capacity or reliable performance, and is beyond the end of expected normal life.</p>
+        <p><strong>Product Deficiency  - </strong>The product does not perform as specified by the customer or as the manufacturer represented, or if there is a specific identifiable problem with the way the equipment was engineered.</p>
+        <p><strong>Quality Deficiency  - </strong>Specific identifiable deficiency in material or workmanship in an internal component and/or in assembly that is not consistent with manufacturer’s specifications or standards.</p>
+        <p><strong>Building or Subcontractor Deficiency  - </strong>Installation contractor used incorrect process or procedure, failed to use specified materials or products, or the quality of work was deficient.</p>
+        <p><strong>Factory Installation Deficiency  - </strong>Equipment manufacturer used incorrect installation process or procedure, failed to use specified materials, or quality of work was deficient.</p>
+        <p><strong>Controls Programming  - </strong>This Root-Cause Type for both stand-alone controls systems (Building Automation Systems) (BAS) and a manufacturer’s internal product control system, which is not appropriately selected, or configured, or contains a programming error.</p>
+        <p><strong>Incorrect Process or Procedure  - </strong>The process or procedure was incorrect or inadequate for the work being performed. This Root-Cause Type includes those situations where management failed to provide the appropriate staffing, tools, or training needed for the work being done.</p>
+        <p><strong>Facilities Execution  - </strong>Incidents due to the actions of data center technicians whose responsibilities include operations and maintenance of facility infrastructure systems and equipment. Included are direct employees (in-house), regularly-present contracted employees both as outsourced partners and recurring service technicians, and vendor or manufacturer personnel present at the request of Facilities organizational element.</p>
+
+    </div>
+{% endblock %}
+
+

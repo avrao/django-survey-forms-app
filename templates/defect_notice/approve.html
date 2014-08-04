@@ -1,0 +1,52 @@
+<h4>Approve Defect Notification for : {{my_search.id}}</h4>
+<form id="ApproveDefectForm_form" method="post" action="approve">{% csrf_token %}
+  <div class="divTable">
+{#    <div class="divRow">{{ myform.username.label }}<br />{{ myform.username}}</div>#}
+    <div class="divleft">{{ myform.site.label}}{{ myform.site}}
+    <span class="divError">{{ myform.site.errors }}</span>
+    </div>
+  
+    <div class="divleft">{{ myform.ttnumber.label }}{{ myform.ttnumber}}</div>
+
+
+    <div class="divleft">{{ myform.defectSource_id.label }}{{ myform.defectSource_id}}</div>
+    <div class="divleft" id="datepicker">
+        {{ myform.incidentDate.label }}{{ myform.incidentDate }}
+    </div>
+
+    <div class="divleft">{{ myform.critical.label }}<br />{{ myform.critical}}</div>
+    <div class="divleft">{{ myform.largeScale.label }}<br />{{ myform.largeScale}}</div>
+  
+
+    <div class="divleft">{{ myform.infrastructureDivision_id.label }}{{ myform.infrastructureDivision_id}}</div>
+  
+    <div class="divleft">{{ myform.infrastructureSystem_id.label }}{{ myform.infrastructureSystem_id}}</div>
+    <div class="divleft">{{ myform.infrastructureSubsystem.label }}{{ myform.infrastructureSubsystem}}</div>
+  
+    <div class="divleft">{{ myform.assetManufacturer.label }}{{ myform.assetManufacturer}}
+    <span class="divError">{{ myform.assetManufacturer.errors }}</span>
+    </div>
+    <div class="divleft">{{ myform.assetModelNumber.label }}{{ myform.assetModelNumber}}
+    <span class="divError">{{ myform.assetModelNumber.errors }}</span>
+    </div>
+
+    {% if myform.filename.value == "none"  %}
+      <div class="divleft"> {{ myform.filename.label }}{{ myform.filename }}</div>
+    {% else %}
+      <div class="divleft">{{ myform.filename.label }}{{ myform.filename }}<a href="..{{ hiddenfile }}">{{ hiddenfile }}</a></div>
+    {% endif %}
+
+
+    <div class="divfullRow">{{ myform.approved.label }}{{ myform.approved}}</div>
+    <div class="divfullRow">{{ myform.defectSynopsis.label }}{{ myform.defectSynopsis}}</div>
+
+    {{ myform.id.as_hidden}}
+    {{ myform.notifierEmail.as_hidden}}
+    {{ myform.username.as_hidden}}
+    {{ myform.approvalDate.as_hidden }}
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+    <div class="divfullRow"><input class="submit" type = "submit" value = "Submit"/></div>
+  </div>
+</form>

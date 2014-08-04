@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block external %}{%  endblock %}
+{% block title %}Form{% endblock %}
+{% block head  %}{{ wizard.form.media }}{% endblock %}
+{% block content %}
+<div class="contentinnerbox">
+<h4>{{ title }}</h4>{{ errormessage }}
+{% if msg %}
+<div class="msg">{{ msg }}</div>
+{% else %}
+    <div class="msg">Assessment Success!<br />
+        {% for each in self %}
+            {{ each }}
+        {% endfor %}
+        {%  for form in form_data %}
+
+            {{ form.period }}<br />
+            {{ form.username }}<br />
+           {{ form.siteCode }}<br />
+            {{ form.assessmentDate }}
+        {% endfor %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}
